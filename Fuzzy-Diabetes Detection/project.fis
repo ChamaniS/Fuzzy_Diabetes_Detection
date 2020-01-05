@@ -1,0 +1,109 @@
+[System]
+Name='project'
+Type='mamdani'
+Version=2.0
+NumInputs=8
+NumOutputs=1
+NumRules=18
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Preg'
+Range=[0 17]
+NumMFs=3
+MF1='Low':'trapmf',[0 0.475 7.213 7.213]
+MF2='Medium':'trimf',[0.475 7.213 12.1]
+MF3='High':'trimf',[7.213 12.1 17 17]
+
+[Input2]
+Name='Plas'
+Range=[0 199]
+NumMFs=3
+MF1='Low':'trapmf',[0 88.84 152.6 152.6]
+MF2='Medium':'trimf',[88.84 152.6 175.8]
+MF3='High':'trimf',[152.6 175.8 199 199]
+
+[Input3]
+Name='Dias'
+Range=[0 122]
+NumMFs=3
+MF1='Low':'trapmf',[0 49.73 88.44 88.44]
+MF2='Medium':'trimf',[49.73 88.44 105.2]
+MF3='High':'trapmf',[88.44 105.2 122 122]
+
+[Input4]
+Name='Tric'
+Range=[0 99]
+NumMFs=3
+MF1='Good':'trapmf',[0 4.584 36.49 36.49]
+MF2='Average':'trimf',[4.584 36.49 67.74]
+MF3='Below':'trimf',[36.49 67.74 99 99]
+
+
+[Input5]
+Name='Ins'
+Range=[0 846]
+NumMFs=3
+MF1='Low':'trapmf',[0 35.44 195 195]
+MF2='Medium':'trimf',[35.44 195 520.5]
+MF3='High':'trimf',[195 520.5 846 846]
+
+
+[Input6]
+Name='Mass'
+Range=[0 67.1]
+NumMFs=3
+MF1='Low':'trapmf',[0 24.11 39.87 39.87]
+MF2='Medium':'trimf',[24.11 39.87 53.49]
+MF3='High':'trimf',[39.87 53.49 67.1 67.1]
+
+
+[Input7]
+Name='Pedi'
+Range=[0 2.42]
+NumMFs=3
+MF1='Low':'trapmf',[0 0.1405 0.8032 0.8032]
+MF2='Medium':'trimf',[0.1405 0.8032 1.612]
+MF3='High':'trimf',[0.8032 1.612 2.42 2.42]
+
+[Input8]
+Name='Age'
+Range=[0 81]
+NumMFs=3
+MF1='Young':'trapmf',[0 21.48 45 45]
+MF2='Medium':'trimf',[21.48 45 63]
+MF3='Old':'trimf',[45 63 81 81]
+
+[Output1]
+Name='output'
+Range=[0 1]
+NumMFs=3
+MF1='Dangerous':'trimf',[-0.4 0 0.4]
+MF2='Medium':'trimf',[0.1 0.5 0.9]
+MF3='Safe':'trimf',[0.6 1 1.4]
+
+
+
+[Rules]
+1 1 1 1 1 1 1 1, 1 (1) : 2
+2 2 2 2 2 2 2 2, 2 (1) : 2
+3 3 3 3 3 3 3 3, 3 (1) : 2
+3 3 2 3 3 3 3 3, 2 (1) : 2
+3 2 3 3 3 3 3 3, 2 (1) : 2
+1 3 3 1 1 1 1 1, 1 (1) : 2
+1 2 3 1 1 1 1 1, 1 (1) : 2
+1 2 3 1 1 1 1 1, 1 (1) : 2
+2 3 2 2 2 2 2 2, 2 (1) : 2
+2 2 3 2 2 2 2 2, 2 (1) : 2
+1 2 2 2 2 2 2 2, 2 (1) : 2
+2 3 2 2 2 2 2 2, 2 (1) : 2
+2 2 3 2 2 2 2 2, 2 (1) : 2
+2 2 2 3 2 2 2 2, 2 (1) : 2
+2 2 2 2 3 2 2 2, 2 (1) : 2
+2 2 2 2 2 3 2 2, 2 (1) : 2
+2 2 2 2 2 2 3 2, 2 (1) : 2
+2 2 2 2 2 2 2 3, 2 (1) : 2
